@@ -5,12 +5,12 @@ import upload from '../controller/blogData.js'; // Import the multer upload midd
 import {updatedBlogData} from "../controller/updateBlogData.js"
 import {deleteBlogItems} from "../controller/blogData.js"
 import {getBlogsOnId} from "../controller/getBlogData.js"
-
+import {updateBlogImage} from "../controller/updateBlogData.js"
 const blogRouter = express.Router();
 
 blogRouter.post('/blogsData',upload.single('image'),blogItems);
 blogRouter.get('/blogs', getBlogItems);
-blogRouter.put("/updated/:_id",updatedBlogData);
+blogRouter.put("/updated/:_id",updateBlogImage.single("image"),updatedBlogData);
 blogRouter.delete("/deleteBlog/:_id",deleteBlogItems);
 blogRouter.get("/blogByID/:_id",getBlogsOnId )
 export default blogRouter;
