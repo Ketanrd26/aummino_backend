@@ -12,7 +12,12 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+
+let corOption = {
+    origin:"http://localhost:3000",
+    optionsSuccessStatus: 200 
+}
+app.use(cors(corOption));
 app.use("/",loginRouter )
 app.use("/", userRoute);
 app.use("/", blogRouter);
