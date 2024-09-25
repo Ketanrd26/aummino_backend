@@ -9,7 +9,7 @@ export const adminData = async (req, res) => {
       },
     ];
 
-    const admin = await loginUser.insertMany(adminCredintials);
+    const admin = await loginUser.insertOne(adminCredintials);
     res.status(200).json({ status: "success", admin });
   } catch (error) {
     res.status(400).json({ status: "error" });
