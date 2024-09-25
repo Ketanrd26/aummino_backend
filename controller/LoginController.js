@@ -4,7 +4,7 @@ export const adminData = async (req, res) => {
   try {
     const adminCredintials = [
       {
-        email: "auminno123@gmail.com",
+        email: "admin123@gmail.com",
         password: "admin123",
       },
     ];
